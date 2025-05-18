@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dennis Cleaning Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #56CCF2, #2F80ED);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    header {
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+      animation: fadeInDown 1s ease forwards;
+      opacity: 0;
+    }
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    header p {
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+
+    /* Hero Image */
+    .hero-image {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      margin-bottom: 60px;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards 0.6s;
+    }
+
+    /* Services Section */
+    section.services {
+      width: 100%;
+      max-width: 1200px;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      gap: 30px;
+      flex-wrap: wrap;
+      animation: fadeIn 1s ease forwards 1.2s;
+      opacity: 0;
+    }
+    .service-card {
+      background: #f9faff;
+      border-radius: 15px;
+      padding: 20px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      box-shadow: 0 4px 15px rgba(47,128,237,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(47,128,237,0.6);
+    }
+    .service-card img {
+      max-width: 80px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2F80ED;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Testimonials Section */
+    section.testimonials {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 80px;
+      text-align: center;
+      color: white;
+      animation: fadeIn 1s ease forwards 1.8s;
+      opacity: 0;
+    }
+    section.testimonials h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+    .testimonial {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px 35px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      font-style: italic;
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+    .testimonial:hover {
+      background: rgba(255,255,255,0.25);
+    }
+    .testimonial::before {
+      content: '“';
+      font-size: 3rem;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      color: #2F80ED;
+      opacity: 0.7;
+      font-weight: 700;
+    }
+    .testimonial::after {
+      content: '”';
+      font-size: 3rem;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      color: #2F80ED;
+      opacity: 0.7;
+      font-weight: 700;
+    }
+    .testimonial-author {
+      margin-top: 15px;
+      font-weight: 700;
+      color: #d1eaff;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 80px;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      user-select: none;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      section.services {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-card {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Dennis Cleaning Services</h1>
+    <p>Professional & Reliable Cleaning for Your Home and Office</p>
+  </header>
+
+  <img
+    src="https://images.unsplash.com/photo-1581579189926-9bcfef6d54a7?auto=format&fit=crop&w=800&q=80"
+    alt="Cleaning service"
+    class="hero-image"
+  />
+
+  <section class="services" aria-label="Services offered">
+    <div class="service-card">
+      <img src="https://img.icons8.com/fluency/96/000000/broom.png" alt="Sweeping Icon" />
+      <h3>Home Cleaning</h3>
+      <p>Deep clean your house with our trusted professionals.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://img.icons8.com/fluency/96/000000/office.png" alt="Office Cleaning Icon" />
+      <h3>Office Cleaning</h3>
+      <p>Keep your workplace spotless and productive.</p>
+    </div>
+    <div class="service-card">
+      <img src="https://img.icons8.com/fluency/96/000000/vacuum-cleaner.png" alt="Vacuum Cleaning Icon" />
+      <h3>Carpet & Upholstery</h3>
+      <p>Refresh your carpets and furniture with expert care.</p>
+    </div>
+  </section>
+
+  <section class="testimonials" aria-label="Customer testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      Dennis Cleaning Services made my home sparkle! The staff were friendly and professional.
+      <div class="testimonial-author">— Sarah J.</div>
+    </div>
+    <div class="testimonial">
+      Reliable, thorough, and affordable. I recommend Dennis Cleaning Services to all my friends.
+      <div class="testimonial-author">— Mark T.</div>
+    </div>
+    <div class="testimonial">
+      My office has never looked better. Great job and fast service!
+      <div class="testimonial-author">— Linda K.</div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Dennis Cleaning Services — All Rights Reserved
+  </footer>
+
+</body>
+</html>
